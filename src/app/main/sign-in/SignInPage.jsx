@@ -63,39 +63,6 @@ function SignInPage() {
 						</Link>
 					</div>
 
-					{/* <Alert
-						icon={false}
-						severity="info"
-						className="mt-24 px-16 text-13 leading-relaxed"
-					>
-						You are browsing <b>Fuse React Demo</b>. Click on the "Sign in" button to access the Demo and
-						Documentation.
-					</Alert> */}
-
-					<Tabs
-						value={_.findIndex(tabs, { id: selectedTabId })}
-						variant="fullWidth"
-						className="w-full mt-24 mb-32"
-						indicatorColor="secondary"
-					>
-						{tabs.map((item) => (
-							<Tab
-								onClick={() => handleSelectTab(item.id)}
-								key={item.id}
-								icon={
-									<img
-										className={item.logoClass}
-										src={item.logo}
-										alt={item.title}
-									/>
-								}
-								className="min-w-0"
-								label={item.title}
-							/>
-						))}
-					</Tabs>
-
-					{selectedTabId === 'jwt' && <JwtLoginTab />}
 					{selectedTabId === 'firebase' && <FirebaseSignInTab />}
 
 					{/* <div className="mt-32 flex items-center">
