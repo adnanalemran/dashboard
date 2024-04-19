@@ -1,31 +1,33 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const SignIn: React.FC = () => {
-
   const { signIn } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     signIn(email, password)
       .then(() => {
         toast.success('Login successful');
+        navigate(location?.state ? location.state : '/');
       })
       .catch((error) => {
-        toast.error('Login failed');
+        toast.error(error.message);
       });
   };
 
   return (
-    <>      <ToastContainer />
-
+    <>
+      {' '}
+      <ToastContainer />
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark lg:px-32 px-4">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
@@ -177,7 +179,7 @@ const SignIn: React.FC = () => {
                     Email
                   </label>
                   <div className="relative">
-                  <input
+                    <input
                       type="email"
                       placeholder="Enter your email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -186,7 +188,7 @@ const SignIn: React.FC = () => {
                     />
 
                     <span className="absolute right-4 top-4">
-                    <svg
+                      <svg
                         className="fill-current"
                         width="22"
                         height="22"
@@ -210,7 +212,7 @@ const SignIn: React.FC = () => {
                     Re-type Password
                   </label>
                   <div className="relative">
-                  <input
+                    <input
                       type="password"
                       placeholder="Enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -295,9 +297,7 @@ const SignIn: React.FC = () => {
                     </Link>
                   </p>
 
-                  <div>
-                 
-                  </div>
+                  <div></div>
                 </div>
               </form>
             </div>

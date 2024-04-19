@@ -37,17 +37,17 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="eCommerce Dashboard | Open IT is a leading BTEB training provider" />
               <ECommerce />
             </>
           }
         />
 
         <Route
-          path="/signin"
+          path="/auth/signin"
           element={
             <>
-              {/* <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
+              <PageTitle title="Signin | Open IT is a leading BTEB training provider" />
 
               <SignIn />
             </>
@@ -58,7 +58,7 @@ function App() {
           path="/auth/signup"
           element={
             <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signup | Open IT is a leading BTEB training provider" />
 
               <SignUp />
             </>
@@ -69,7 +69,7 @@ function App() {
           path="/calendar"
           element={
             <>
-              <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Calendar | Open IT is a leading BTEB training provider" />
               <Calendar />
             </>
           }
@@ -78,7 +78,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Profile | Open IT is a leading BTEB training provider" />
               <Profile />
             </>
           }
@@ -87,7 +87,7 @@ function App() {
           path="/forms/form-elements"
           element={
             <>
-              <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Elements | Open IT is a leading BTEB training provider" />
               <FormElements />
             </>
           }
@@ -96,7 +96,7 @@ function App() {
           path="/forms/form-layout"
           element={
             <>
-              <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Layout | Open IT is a leading BTEB training provider" />
               <FormLayout />
             </>
           }
@@ -105,7 +105,7 @@ function App() {
           path="/tables"
           element={
             <>
-              <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Tables | Open IT is a leading BTEB training provider" />
               <Tables />
             </>
           }
@@ -114,7 +114,7 @@ function App() {
           path="/settings"
           element={
             <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Settings | Open IT is a leading BTEB training provider" />
               <Settings />
             </>
           }
@@ -123,7 +123,7 @@ function App() {
           path="/chart"
           element={
             <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Basic Chart | Open IT is a leading BTEB training provider" />
               <Chart />
             </>
           }
@@ -132,7 +132,7 @@ function App() {
           path="/ui/alerts"
           element={
             <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Alerts | Open IT is a leading BTEB training provider" />
               <Alerts />
             </>
           }
@@ -141,7 +141,7 @@ function App() {
           path="/ui/buttons"
           element={
             <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Buttons | Open IT is a leading BTEB training provider" />
               <Buttons />
             </>
           }
