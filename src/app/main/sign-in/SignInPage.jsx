@@ -16,12 +16,12 @@ import JwtLoginTab from './tabs/JwtSignInTab';
 import FirebaseSignInTab from './tabs/FirebaseSignInTab';
 
 const tabs = [
-	{
-		id: 'jwt',
-		title: 'JWT',
-		logo: 'assets/images/logo/jwt.svg',
-		logoClass: 'h-40 p-4 bg-black rounded-12'
-	},
+	// {
+	// 	id: 'jwt',
+	// 	title: 'JWT',
+	// 	logo: 'assets/images/logo/jwt.svg',
+	// 	logoClass: 'h-40 p-4 bg-black rounded-12'
+	// },
 	{
 		id: 'firebase',
 		title: 'Firebase',
@@ -63,14 +63,14 @@ function SignInPage() {
 						</Link>
 					</div>
 
-					<Alert
+					{/* <Alert
 						icon={false}
 						severity="info"
 						className="mt-24 px-16 text-13 leading-relaxed"
 					>
 						You are browsing <b>Fuse React Demo</b>. Click on the "Sign in" button to access the Demo and
 						Documentation.
-					</Alert>
+					</Alert> */}
 
 					<Tabs
 						value={_.findIndex(tabs, { id: selectedTabId })}
@@ -98,7 +98,7 @@ function SignInPage() {
 					{selectedTabId === 'jwt' && <JwtLoginTab />}
 					{selectedTabId === 'firebase' && <FirebaseSignInTab />}
 
-					<div className="mt-32 flex items-center">
+					{/* <div className="mt-32 flex items-center">
 						<div className="mt-px flex-auto border-t" />
 						<Typography
 							className="mx-8"
@@ -107,9 +107,9 @@ function SignInPage() {
 							Or continue with
 						</Typography>
 						<div className="mt-px flex-auto border-t" />
-					</div>
+					</div> */}
 
-					<div className="mt-32 flex items-center space-x-16">
+					{/* <div className="mt-32 flex items-center space-x-16">
 						<Button
 							variant="outlined"
 							className="flex-auto"
@@ -143,7 +143,7 @@ function SignInPage() {
 								feather:github
 							</FuseSvgIcon>
 						</Button>
-					</div>
+					</div> */}
 				</CardContent>
 			</Paper>
 

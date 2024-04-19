@@ -10,9 +10,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from 'src/app/auth/AuthRouteProvider';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-/**
- * Form Validation Schema
- */
+ 
 const schema = z.object({
 	email: z.string().email('You must enter a valid email').nonempty('You must enter an email'),
 	password: z
