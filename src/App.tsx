@@ -42,6 +42,29 @@ function App() {
             </>
           }
         />
+
+        <Route
+          path="/signin"
+          element={
+            <>
+              {/* <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" /> */}
+
+              <SignIn />
+            </>
+          }
+        />
+
+        <Route
+          path="/auth/signup"
+          element={
+            <>
+              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+
+              <SignUp />
+            </>
+          }
+        />
+
         <Route
           path="/calendar"
           element={
@@ -120,24 +143,6 @@ function App() {
             <>
               <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <Buttons />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signin"
-          element={
-            <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignIn />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signup"
-          element={
-            <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignUp />
             </>
           }
         />
