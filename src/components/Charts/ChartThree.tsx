@@ -1,6 +1,8 @@
 import { ApexOptions } from 'apexcharts';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosSecure from '../../hooks/useAxiosPublic';
 
 interface ChartThreeState {
   series: number[];
@@ -12,7 +14,7 @@ const options: ApexOptions = {
     type: 'donut',
   },
   colors: ['#3C50E0', '#6577F3', '#8FD0EF', '#0FADCF'],
-  labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
+  labels: ['Admin', 'Student', 'Applied student ', 'Out  Service'],
   legend: {
     show: false,
     position: 'bottom',
@@ -50,24 +52,55 @@ const options: ApexOptions = {
 };
 
 const ChartThree: React.FC = () => {
-  const [state, setState] = useState<ChartThreeState>({
-    series: [65, 34, 12, 56],
+  const axiosSecure = useAxiosSecure();
+
+  const { data: user = [] } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/userv2/userNumber", {});
+      return res.data;
+    },
   });
 
+
+  const totalAdmins = user?.totalAdmins || 0;
+  const totalStudents = user?.totalStudents || 0;
+  const outOfService = user?.outService || 0;
+  const applied_student = user?.applied_student || 0;
+  const total = totalAdmins + totalStudents + outOfService + applied_student;
+
+  const adminPercentage = (totalAdmins / total) * 100;
+  const studentPercentage = (totalStudents / total) * 100;
+  const appliedPercentage = (applied_student / total) * 100;
+  const outPercentage = (outOfService / total) * 100;
+
+ 
+
+  const [state, setState] = useState<ChartThreeState>({
+    series: [adminPercentage, studentPercentage, appliedPercentage, outPercentage],
+  });
+
+
+
+
+
+  
   const handleReset = () => {
     setState((prevState) => ({
       ...prevState,
-      series: [65, 34, 12, 56],
+      series: [adminPercentage, studentPercentage, 12, 56],
     }));
   };
   handleReset;
+
+
 
   return (
     <div className="sm:px-7.5 col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
       <div className="mb-3 justify-between gap-4 sm:flex">
         <div>
           <h5 className="text-xl font-semibold text-black dark:text-white">
-            Visitors Analytics
+            USER Analytics
           </h5>
         </div>
         <div>
@@ -77,9 +110,7 @@ const ChartThree: React.FC = () => {
               id=""
               className="relative z-20 inline-flex appearance-none bg-transparent py-1 pl-3 pr-8 text-sm font-medium outline-none"
             >
-              <option value="" className="dark:bg-boxdark">
-                Monthly
-              </option>
+             
               <option value="" className="dark:bg-boxdark">
                 Yearly
               </option>
@@ -123,8 +154,8 @@ const ChartThree: React.FC = () => {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-primary"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Desktop </span>
-              <span> 65% </span>
+              <span> Admin </span>
+              <span> {totalAdmins } </span>
             </p>
           </div>
         </div>
@@ -132,8 +163,8 @@ const ChartThree: React.FC = () => {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#6577F3]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Tablet </span>
-              <span> 34% </span>
+              <span> Student </span>
+              <span> {totalStudents } </span>
             </p>
           </div>
         </div>
@@ -141,8 +172,8 @@ const ChartThree: React.FC = () => {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#8FD0EF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Mobile </span>
-              <span> 45% </span>
+              <span> Applied student </span>
+              <span>{applied_student}</span>
             </p>
           </div>
         </div>
@@ -150,8 +181,8 @@ const ChartThree: React.FC = () => {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#0FADCF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Unknown </span>
-              <span> 12% </span>
+              <span> Out Of Service  </span>
+              <span> {outOfService }</span>
             </p>
           </div>
         </div>
