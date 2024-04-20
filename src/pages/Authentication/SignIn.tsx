@@ -26,7 +26,7 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-      {' '}
+    
       <ToastContainer />
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark lg:px-32 px-4">
         <div className="flex flex-wrap items-center">

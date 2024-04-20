@@ -3,7 +3,6 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
-import UserOne from '../../images/user/user-01.png';
 
 const DropdownUser = () => {
   const location = useLocation();
