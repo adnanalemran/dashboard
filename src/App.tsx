@@ -37,7 +37,7 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | Open IT is a leading BTEB training provider" />
+              <PageTitle title="Dashboard | Open IT is a leading BTEB training provider" />
               <ECommerce />
             </>
           }

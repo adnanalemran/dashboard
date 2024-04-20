@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
-import Logo from '../../images/logo/logo.svg';
-
+import LogoIcon from '../../images/logo/logo-icon.svg';
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
@@ -64,9 +63,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <NavLink to="/">
-          <img src={Logo} alt="Logo" />
-        </NavLink>
+        <a href="http://openit-edu.com/">
+         
+            <div className="flex gap-4 items-center  ">
+              <img src={LogoIcon}  className="bg-slate-200 p-1 rounded w-8"alt="Logo" />
+              <h2 className="text-2xl font-bold text-white uppercase ">Open IT (APP) </h2>
+            </div>
+     
+        </a>
 
         <button
           ref={trigger}
