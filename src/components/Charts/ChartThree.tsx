@@ -54,46 +54,57 @@ const options: ApexOptions = {
 const ChartThree: React.FC = () => {
   const axiosSecure = useAxiosSecure();
 
-  const { data: user = [] } = useQuery({
-    queryKey: ["user"],
+  const { data: user, isLoading } = useQuery({
+    queryKey: ['user'],
     queryFn: async () => {
-      const res = await axiosSecure.get("/userv2/userNumber", {});
+      const res = await axiosSecure.get('/userv2/userNumber', {});
       return res.data;
     },
   });
-
 
   const totalAdmins = user?.totalAdmins || 0;
   const totalStudents = user?.totalStudents || 0;
   const outOfService = user?.outService || 0;
   const applied_student = user?.applied_student || 0;
-  const total = totalAdmins + totalStudents + outOfService + applied_student;
-
-  const adminPercentage = (totalAdmins / total) * 100;
-  const studentPercentage = (totalStudents / total) * 100;
-  const appliedPercentage = (applied_student / total) * 100;
-  const outPercentage = (outOfService / total) * 100;
-
- 
 
   const [state, setState] = useState<ChartThreeState>({
-    series: [adminPercentage, studentPercentage, appliedPercentage, outPercentage],
+    series: [],
   });
 
+  interface ChartThreeState {
+    series: number[];
+  }
 
+  React.useEffect(() => {
+    if (!isLoading && user) {
+      const totalAdmins = user.totalAdmins || 0;
+      const totalStudents = user.totalStudents || 0;
+      const outOfService = user.outService || 0;
+      const applied_student = user.applied_student || 0;
+      const total =
+        totalAdmins + totalStudents + outOfService + applied_student;
 
+      const adminPercentage = parseInt((totalAdmins / total) * 100);
+      const studentPercentage = parseInt((totalStudents / total) * 100);
+      const appliedPercentage = parseInt((applied_student / total) * 100);
+      const outPercentage = parseInt((outOfService / total) * 100);
 
+      setState({
+        series: [
+          adminPercentage,
+          studentPercentage,
+          appliedPercentage,
+          outPercentage,
+        ],
+      });
+    }
+  }, [isLoading, user]);
 
-  
-  const handleReset = () => {
-    setState((prevState) => ({
-      ...prevState,
-      series: [adminPercentage, studentPercentage, 12, 56],
-    }));
-  };
-  handleReset;
+  if (isLoading) {
+    return;
 
-
+    <div className="w-full h-20">Loading...</div>;
+  }
 
   return (
     <div className="sm:px-7.5 col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
@@ -110,7 +121,6 @@ const ChartThree: React.FC = () => {
               id=""
               className="relative z-20 inline-flex appearance-none bg-transparent py-1 pl-3 pr-8 text-sm font-medium outline-none"
             >
-             
               <option value="" className="dark:bg-boxdark">
                 Yearly
               </option>
@@ -155,7 +165,7 @@ const ChartThree: React.FC = () => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-primary"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> Admin </span>
-              <span> {totalAdmins } </span>
+              <span> {totalAdmins} </span>
             </p>
           </div>
         </div>
@@ -164,7 +174,7 @@ const ChartThree: React.FC = () => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#6577F3]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> Student </span>
-              <span> {totalStudents } </span>
+              <span> {totalStudents} </span>
             </p>
           </div>
         </div>
@@ -181,8 +191,8 @@ const ChartThree: React.FC = () => {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#0FADCF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Out Of Service  </span>
-              <span> {outOfService }</span>
+              <span> Out Of Service </span>
+              <span> {outOfService}</span>
             </p>
           </div>
         </div>
