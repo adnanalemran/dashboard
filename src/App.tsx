@@ -16,6 +16,7 @@ import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import PrivateRoute from './Router/PrivateRoute';
+import OpenAIChat from './pages/OpenAi/OpenAIChat';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -49,7 +50,6 @@ function App() {
           element={
             <>
               <PageTitle title="Signin | Open IT is a leading BTEB training provider" />
-
               <SignIn />
             </>
           }
@@ -146,8 +146,10 @@ function App() {
               <Buttons />
             </>
           }
-        />
+        />  
+           
       </Routes>
+
     </>
   );
 }
