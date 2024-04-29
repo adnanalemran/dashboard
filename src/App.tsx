@@ -12,11 +12,10 @@ import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
-import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
-import PrivateRoute from './Router/PrivateRoute';
-import OpenAIChat from './pages/OpenAi/OpenAIChat';
+import StudentList from './pages/UserPage/StudentList/StudentList';
+import AllUser from './pages/UserPage/AllUser/AllUser';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -102,15 +101,26 @@ function App() {
             </>
           }
         />
+
         <Route
-          path="/tables"
+          path="/student"
           element={
             <>
-              <PageTitle title="Tables | Open IT is a leading BTEB training provider" />
-              <Tables />
+              <PageTitle title="student | Open IT is a leading BTEB training provider" />
+              <StudentList />
+            </>
+          }
+        />     
+         <Route
+          path="/user"
+          element={
+            <>
+              <PageTitle title="User | Open IT is a leading BTEB training provider" />
+              <AllUser />
             </>
           }
         />
+
         <Route
           path="/settings"
           element={
@@ -146,10 +156,8 @@ function App() {
               <Buttons />
             </>
           }
-        />  
-           
+        />
       </Routes>
-
     </>
   );
 }

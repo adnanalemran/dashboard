@@ -31,9 +31,10 @@ const Profile = () => {
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="relative z-20 h-35 md:h-65">
           <img
-            src={CoverOne}
+            // src={CoverOne}
+            src="https://64.media.tumblr.com/a7d100aabe2033b2fff1b7d5bf6af05f/tumblr_nlprx4nuGI1relaado1_400.gif"
             alt="profile cover"
-            className="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center"
+            className="h-full w-full  rounded-tr-sm  object-center"
           />
           <div className="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4"></div>
         </div>
@@ -56,19 +57,19 @@ const Profile = () => {
             <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                 <span className="   block text-black dark:text-white">
-                 {dbuser?.userType}
+                  {dbuser?.userType}
                 </span>
                 {/* <span className="text-sm">course</span> */}
               </div>
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                 <span className="font-semibold text-black dark:text-white">
-                {dbuser?.beach}
+                  {dbuser?.beach}
                 </span>
                 <span className="text-sm"> batch</span>
               </div>
               <div className="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
                 <span className="font-semibold text-black dark:text-white">
-                {dbuser?.totalDueAmmout} TK
+                  {dbuser?.totalDueAmmout} TK
                 </span>
                 <span className="text-sm">Due</span>
               </div>
@@ -92,12 +93,10 @@ const Profile = () => {
                 number is {dbuser?.userData?.sscRegNo}, and I passed from{' '}
                 {dbuser?.userData?.SSCBoardName} board in{' '}
                 {dbuser?.userData?.passingYear}. I am currently enrolled in the{' '}
-                {dbuser?.course} course. My gender is {dbuser?.userData?.gender}
+                {dbuser?.course} course. 
                 .
               </p>
             </div>
-
-           
           </div>
         </div>
       </div>

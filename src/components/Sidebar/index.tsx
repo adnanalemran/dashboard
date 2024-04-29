@@ -9,8 +9,6 @@ interface SidebarProps {
 }
 const { pathname } = location;
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-
-
   const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
@@ -101,8 +99,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
       <hr className="border-1 shadow-5" />
       <AdminMenu />
-
- 
     </aside>
   );
 };
