@@ -54,7 +54,7 @@ const Profile = () => {
           <QrCode></QrCode>
           <div className="mt-4">
             <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
-              {user?.displayName}
+              {user?.displayName} 
             </h3>
             <p className="font-medium"> {user?.email}</p>
             <p className="font-medium"> {dbuser?.phoneNo}</p>

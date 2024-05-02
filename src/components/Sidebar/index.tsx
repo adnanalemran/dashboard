@@ -3,17 +3,16 @@ import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
 import LogoIcon from '../../images/logo/logo-icon.svg';
 import AdminMenu from './menu/AdminMenu';
+
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
 }
-const { pathname } = location;
+
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
- 
- 
   return (
     <aside
       ref={sidebar}
@@ -24,13 +23,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <a href="http://openit-edu.com/">
-          <div className="flex gap-4 items-center  ">
+          <div className="flex gap-4 items-center">
             <img
               src={LogoIcon}
               className="bg-slate-200 p-1 rounded w-8"
               alt="Logo"
             />
-            <h2 className="text-2xl font-bold text-white uppercase ">
+            <h2 className="text-2xl font-bold text-white uppercase">
               Open IT (APP)
             </h2>
           </div>
@@ -58,17 +57,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </svg>
         </button>
       </div>
-
       <hr className="border-1 shadow-5" />
       <AdminMenu />
+      <div className="flex-grow"></div> {/* To push content to the bottom */}
       <hr className="border-1" />
-      <p className="pl-8 pt-4 text-sm pos">
+      <p className="pl-8 pt-4 pb-4 text-sm pos">
         Developed By
         <a
           className="pl-2 text-green-100"
           href="https://www.linkedin.com/in/adnanalemran"
         >
-          Adana
+          Adnan al Emran
         </a>
       </p>
     </aside>
