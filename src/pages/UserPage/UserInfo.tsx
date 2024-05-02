@@ -76,25 +76,34 @@ const UserInfo = () => {
 
                 <div className="mx-auto max-w-180">
                   <h4 className="font-semibold text-black dark:text-white">
-                    About Me
+                    About Student
                   </h4>
-                  <p className="mt-4.5">
-                    Name: : {user?.userData?.displayName}. Her father's name is:
-                    : {user?.userData?.fatherName}. Her mother's name is: :{' '}
-                    {user?.userData?.motherName}. He was born on :{' '}
-                    {user?.userData?.dateOfBirth}. Her education qualification
-                    is: : {user?.userData?.educationQualification}. He attended
-                    : {user?.userData?.schoolUniversity}. You can contact me at
-                    : {user?.userData?.PhoneNo} or through Her email :{' '}
-                    {user?.email}
-                    Her present address is: : {user?.userData?.presentAddress},
-                    and Her permanent address is: :{' '}
-                    {user?.userData?.permanentAddress}. Her SSC roll number is:{' '}
-                    : {user?.userData?.sscRollNo}, registration number is: :{' '}
-                    {user?.userData?.sscRegNo}, and He passed from :{' '}
-                    {user?.userData?.SSCBoardName} board in :{' '}
-                    {user?.userData?.passingYear}. He am currently enrolled in
-                    the : {user?.course} course
+                  <p className="mt-4.5 text-left">
+                    Name: {user?.userData?.displayName}.
+                    <br /> Her father's name is : {user?.userData?.fatherName}.
+                    <br /> Her mother's name is:{user?.userData?.motherName}.
+                    <br />
+                    He was born on : {user?.userData?.dateOfBirth}.
+                    <br />
+                    Her education qualification is:  
+                    {user?.userData?.educationQualification}.
+                    <br />
+                    He attended :{user?.userData?.schoolUniversity}.
+                    <br />
+                    You can contact me at :{user?.userData?.PhoneNo}
+                    or through Her email :{user?.email}
+                    <br />
+                    Her present address is: {user?.userData?.presentAddress},
+                    <br />
+                    Her permanent address is:
+                    {user?.userData?.permanentAddress}.
+                    <br />
+                    Her SSC roll number is:  {user?.userData?.sscRollNo},
+                    registration number is: {user?.userData?.sscRegNo},<br />  
+                    and He passed from :{user?.userData?.SSCBoardName} board in
+                    : {user?.userData?.passingYear}.
+                    <br />
+                    He am currently enrolled in the : {user?.course} course
                   </p>
                   <br />
                   <br />
