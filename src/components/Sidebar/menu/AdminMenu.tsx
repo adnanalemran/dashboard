@@ -201,9 +201,7 @@ const AdminMenu = () => {
                 }}
               </SidebarLinkGroup>
 
-              {/* <!-- Menu Item Calendar --> */}
-
-              {/* <!-- Menu Item Profile --> */}
+       
 
               <li>
                 <NavLink
@@ -343,6 +341,7 @@ const AdminMenu = () => {
               </li>
             </ul>
           </div>
+          
         </nav>
       </div>
     </div>
