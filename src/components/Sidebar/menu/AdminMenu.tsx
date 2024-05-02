@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import SidebarLinkGroup from '../SidebarLinkGroup';
 import { NavLink } from 'react-router-dom';
+import SidebarLinkGroup from '../SidebarLinkGroup';
 const AdminMenu = () => {
   const { pathname } = location;
   const trigger = useRef<any>(null);
@@ -171,13 +171,24 @@ const AdminMenu = () => {
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
+                              to="/newStudent"
+                              className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                                pathname.includes('newStudent') &&
+                                'bg-graydark dark:bg-meta-4'
+                              }`}
+                            >
+                              New Student
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
                               to="/student"
                               className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                                 pathname.includes('student') &&
                                 'bg-graydark dark:bg-meta-4'
                               }`}
                             >
-                              Student
+                             Student
                             </NavLink>
                           </li>
                           <li>
@@ -193,7 +204,6 @@ const AdminMenu = () => {
                           </li>
                         </ul>
                       </div>
-                      {/* <!-- Dropdown Menu End --> */}
                     </React.Fragment>
                   );
                 }}

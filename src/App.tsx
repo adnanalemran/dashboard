@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Loader from './common/Loader';
@@ -8,15 +8,16 @@ import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
 import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
-import StudentList from './pages/UserPage/StudentList/StudentList';
 import AllUser from './pages/UserPage/AllUser/AllUser';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
+import NewStudent from './pages/UserPage/StudentList/NewStudent';
+import StudentList from './pages/UserPage/StudentList/StudentList';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -57,7 +58,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/auth/signin"
           element={
@@ -67,7 +67,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/auth/signup"
           element={
@@ -78,7 +77,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/calendar"
           element={
@@ -88,7 +86,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/profile"
           element={
@@ -107,7 +104,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/forms/form-elements"
           element={
@@ -126,7 +122,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/student"
           element={
@@ -136,6 +131,17 @@ function App() {
             </>
           }
         />
+
+        <Route
+          path="/newStudent"
+          element={
+            <>
+              <PageTitle title="new student | Open IT is a leading BTEB training provider" />
+              <NewStudent />
+            </>
+          }
+        />
+        
         <Route
           path="/user"
           element={
@@ -145,7 +151,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/settings"
           element={

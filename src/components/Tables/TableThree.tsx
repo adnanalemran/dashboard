@@ -1,8 +1,5 @@
 import { Package } from '../../types/package';
 
-
-
-
 const packageData: Package[] = [
   {
     name: 'Free package',
@@ -30,11 +27,6 @@ const packageData: Package[] = [
   },
 ];
 
-
-
-
-
-
 const TableThree = () => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
@@ -44,7 +36,7 @@ const TableThree = () => {
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
               <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
                 Photo
-              </th>{' '}
+              </th>
               <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
                 Package
               </th>

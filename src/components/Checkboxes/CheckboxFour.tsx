@@ -27,9 +27,7 @@ const CheckboxFour = () => {
               className={`h-2.5 w-2.5 rounded-full bg-transparent ${
                 isChecked && '!bg-primary'
               }`}
-            >
-              {' '}
-            </span>
+            ></span>
           </div>
         </div>
         Checkbox Text

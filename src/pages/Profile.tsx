@@ -1,12 +1,9 @@
-import { AuthContext } from '../providers/AuthProvider';
-import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
-import DefaultLayout from '../layout/DefaultLayout';
-import CoverOne from '../images/cover/cover-01.png';
-import userSix from '../images/user/user-06.png';
-import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
+import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
+import QRCodeComponent from '../components/QR/QRCodeComponent';
 import useAxiosSecure from '../hooks/useAxiosPublic';
-import QrCode from './QrCode';
+import DefaultLayout from '../layout/DefaultLayout';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -27,6 +24,9 @@ const Profile = () => {
       fetchData();
     }
   }, [axiosSecure, user?.email]);
+
+  const qrCodeValue = `https://openit-edu.com/checking/${dbuser?._id}`;
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Profile" />
@@ -51,7 +51,7 @@ const Profile = () => {
               />
             </div>
           </div>
-          <QrCode></QrCode>
+
           <div className="mt-4">
             <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
               {user?.displayName}
@@ -84,21 +84,28 @@ const Profile = () => {
                 About Me
               </h4>
               <p className="mt-4.5">
-                Hello, I am {dbuser?.userData?.displayName}. My father's name is{' '}
-                {dbuser?.userData?.fatherName}. My mother's name is{' '}
-                {dbuser?.userData?.motherName}. I was born on{' '}
-                {dbuser?.userData?.dateOfBirth}. My education qualification is{' '}
-                {dbuser?.userData?.educationQualification}. I attended{' '}
-                {dbuser?.userData?.schoolUniversity}. You can contact me at{' '}
+                Hello, I am {dbuser?.userData?.displayName}. My father's name is
+                {dbuser?.userData?.fatherName}. My mother's name is
+                {dbuser?.userData?.motherName}. I was born on
+                {dbuser?.userData?.dateOfBirth}. My education qualification is
+                {dbuser?.userData?.educationQualification}. I attended
+                {dbuser?.userData?.schoolUniversity}. You can contact me at
                 {dbuser?.userData?.PhoneNo} or through my email {dbuser?.email}.
                 My present address is {dbuser?.userData?.presentAddress}, and my
                 permanent address is {dbuser?.userData?.permanentAddress}. My
                 SSC roll number is {dbuser?.userData?.sscRollNo}, registration
-                number is {dbuser?.userData?.sscRegNo}, and I passed from{' '}
-                {dbuser?.userData?.SSCBoardName} board in{' '}
-                {dbuser?.userData?.passingYear}. I am currently enrolled in the{' '}
+                number is {dbuser?.userData?.sscRegNo}, and I passed from
+                {dbuser?.userData?.SSCBoardName} board in
+                {dbuser?.userData?.passingYear}. I am currently enrolled in the
                 {dbuser?.course} course. .
               </p>
+              <br />
+              <br />
+              <div>
+                <div className="mx-auto w-32 ">
+                  <QRCodeComponent value={qrCodeValue} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

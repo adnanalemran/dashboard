@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosPublic';
 
 const TableTwo = () => {
@@ -23,9 +23,7 @@ const TableTwo = () => {
       )
     : [];
 
-  if (loading === true) {
-    return <div className="  ">Loading....</div>;
-  }
+  
 
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -43,7 +41,6 @@ const TableTwo = () => {
           placeholder="Search Student by name "
         />
         <span className="flex items-center px-3 pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-300">
-          {' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -81,7 +78,7 @@ const TableTwo = () => {
           <div className="col-span-3 flex items-center">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="h-12.5 w-15 rounded-md">
-                <img src={user.photoURL} alt="Product" />
+                <img src={user.photoURL} alt="Product"   className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100" />
               </div>
               <p className="text-sm text-black dark:text-white">
                 {user?.displayName}

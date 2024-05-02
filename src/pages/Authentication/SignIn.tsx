@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import LogoDark from '../../images/logo/logo-dark.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LogoDark from '../../images/logo/logo-dark.svg';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const SignIn: React.FC = () => {
@@ -26,7 +26,6 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-    
       <ToastContainer />
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark lg:px-32 px-4">
         <div className="flex flex-wrap items-center">
@@ -167,7 +166,7 @@ const SignIn: React.FC = () => {
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
               <span className="mb-1.5 block font-medium">
-                Start for Student / Admin{' '}
+                Start for Student / Admin
               </span>
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
                 Sign In to Open It
@@ -291,7 +290,7 @@ const SignIn: React.FC = () => {
 
                 <div className="mt-6 text-center">
                   <p>
-                    Don’t have any account?{' '}
+                    Don’t have any account?
                     <Link to="/auth/signup" className="text-primary">
                       Sign Up
                     </Link>
