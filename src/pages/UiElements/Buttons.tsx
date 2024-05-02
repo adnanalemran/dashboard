@@ -52,7 +52,7 @@ const Buttons = () => {
               to="#"
               className="inline-flex items-center justify-center bg-meta-3 py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
             >
-              Button
+              Buttons
             </Link>
 
             <Link
@@ -96,7 +96,7 @@ const Buttons = () => {
               to="#"
               className="inline-flex items-center justify-center rounded-full bg-black py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
             >
-              Button
+              Buttonsds
             </Link>
 
             <Link

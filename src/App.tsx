@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Loader from './common/Loader';
@@ -16,9 +16,11 @@ import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import StudentList from './pages/UserPage/StudentList/StudentList';
 import AllUser from './pages/UserPage/AllUser/AllUser';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false); // Add state for error
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -29,7 +31,19 @@ function App() {
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
-  return loading ? (
+  // Handle error
+  useEffect(() => {
+    const errorHandler = () => {
+      setError(true);
+    };
+
+    window.addEventListener('error', errorHandler);
+    return () => window.removeEventListener('error', errorHandler);
+  }, []);
+
+  return error ? (
+    <ErrorPage />
+  ) : loading ? (
     <Loader />
   ) : (
     <>
