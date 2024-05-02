@@ -18,6 +18,7 @@ import Buttons from './pages/UiElements/Buttons';
 import AllUser from './pages/UserPage/AllUser/AllUser';
 import NewStudent from './pages/UserPage/StudentList/NewStudent';
 import StudentList from './pages/UserPage/StudentList/StudentList';
+import UserInfo from './pages/UserPage/UserInfo';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -141,7 +142,7 @@ function App() {
             </>
           }
         />
-        
+
         <Route
           path="/user"
           element={
@@ -151,6 +152,16 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/userInfo/:id"
+          element={
+            <>
+              <PageTitle title="User | Open IT is a leading BTEB training provider" />
+              <UserInfo />
+            </>
+          }
+        />
+
         <Route
           path="/settings"
           element={

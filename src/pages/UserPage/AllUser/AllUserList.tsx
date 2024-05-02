@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
 const AllUserList = () => {
+
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
   const { data: user = [], refetch } = useQuery({
@@ -90,7 +91,8 @@ const AllUserList = () => {
             }`}
             key={key}
           >
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
+            <Link  to={`/userInfo/${user?._id}`}>
+             <div className="flex items-center gap-3 p-2.5 xl:p-5">
               <div className="relative flex-shrink-0">
                 <img
                   src={user?.photoURL}
@@ -103,6 +105,8 @@ const AllUserList = () => {
                 {user.displayName}
               </p>
             </div>
+            </Link>
+           
 
             <div className="flex items-center justify-center p-2.5 xl:p-5">
               <p className="text-black dark:text-white">{user.phoneNo}K</p>

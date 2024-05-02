@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosPublic';
+import { Link } from 'react-router-dom';
 
 const TableTwo = () => {
   const axiosSecure = useAxiosSecure();
@@ -76,14 +77,22 @@ const TableTwo = () => {
           key={key}
         >
           <div className="col-span-3 flex items-center">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="h-12.5 w-15 rounded-md">
-                <img src={user.photoURL} alt="Product"   className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100" />
+          <Link  to={`/userInfo/${user?._id}`}>
+             <div className="flex items-center gap-3 p-2.5 xl:p-5">
+              <div className="relative flex-shrink-0">
+                <img
+                  src={user?.photoURL}
+                  alt=""
+                  className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
+                />
               </div>
-              <p className="text-sm text-black dark:text-white">
-                {user?.displayName}
+
+              <p className="hidden text-black dark:text-white sm:block">
+                {user.displayName}
               </p>
             </div>
+            </Link>
+           
           </div>
           <div className="col-span-2 hidden items-center sm:flex">
             <p className="text-sm text-black dark:text-white">{user.course}</p>
