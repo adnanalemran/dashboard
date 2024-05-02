@@ -99,6 +99,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
       <hr className="border-1 shadow-5" />
       <AdminMenu />
+      <hr className="border-1" />
+      <p className="pl-8 pt-4 text-sm pos">
+        Developed By
+        <a
+          className="pl-2 text-green-100"
+          href="https://www.linkedin.com/in/adnanalemran"
+        >
+          Adana
+        </a>
+      </p>
     </aside>
   );
 };
