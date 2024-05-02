@@ -19,6 +19,7 @@ import AllUser from './pages/UserPage/AllUser/AllUser';
 import NewStudent from './pages/UserPage/StudentList/NewStudent';
 import StudentList from './pages/UserPage/StudentList/StudentList';
 import UserInfo from './pages/UserPage/UserInfo';
+import AdminEditProfile from './pages/UserPage/AllUser/AdminEditProfile';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -167,7 +168,7 @@ function App() {
           element={
             <>
               <PageTitle title="User | Open IT is a leading BTEB training provider" />
-              <UserInfo />
+              <AdminEditProfile />
             </>
           }
         />
