@@ -152,8 +152,18 @@ function App() {
             </>
           }
         />
+
         <Route
           path="/userInfo/:id"
+          element={
+            <>
+              <PageTitle title="User | Open IT is a leading BTEB training provider" />
+              <UserInfo />
+            </>
+          }
+        />
+        <Route
+          path="/AdminEditProfile/:id"
           element={
             <>
               <PageTitle title="User | Open IT is a leading BTEB training provider" />

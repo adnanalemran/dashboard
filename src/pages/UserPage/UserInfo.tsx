@@ -109,7 +109,7 @@ const UserInfo = () => {
           </div>
           <div className=" w-full flex gap-4 mx-auto items-center justify-center">
             <Link
-              to={`/AdminEditProfile/$: {user?._id}`}
+              to={`/AdminEditProfile/${user?._id}`}
               className="text-blue-800 font-bold"
             >
               <button className="p-3 bg-slate-300 rounded-xl  ">

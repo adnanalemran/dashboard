@@ -24,8 +24,6 @@ const TableTwo = () => {
       )
     : [];
 
-  
-
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="py-6 px-4 md:px-6 xl:px-7.5">
@@ -77,22 +75,21 @@ const TableTwo = () => {
           key={key}
         >
           <div className="col-span-3 flex items-center">
-          <Link  to={`/userInfo/${user?._id}`}>
-             <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="relative flex-shrink-0">
-                <img
-                  src={user?.photoURL}
-                  alt=""
-                  className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
-                />
-              </div>
+            <Link to={`/userInfo/${user?._id}`}>
+              <div className="flex items-center gap-3 p-2.5 xl:p-5">
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={user?.photoURL}
+                    alt=""
+                    className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
+                  />
+                </div>
 
-              <p className="hidden text-black dark:text-white sm:block">
-                {user.displayName}
-              </p>
-            </div>
+                <p className="hidden text-black dark:text-white sm:block">
+                  {user.displayName}
+                </p>
+              </div>
             </Link>
-           
           </div>
           <div className="col-span-2 hidden items-center sm:flex">
             <p className="text-sm text-black dark:text-white">{user.course}</p>
