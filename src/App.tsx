@@ -74,6 +74,7 @@ function App() {
             </>
           }
         />
+
         <Route
           path="/profile"
           element={
@@ -83,6 +84,16 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/my-id"
+          element={
+            <>
+              <PageTitle title="id | Open IT is a leading BTEB training provider" />
+              <Profile />
+            </>
+          }
+        />
+
         <Route
           path="/forms/form-elements"
           element={
@@ -110,8 +121,8 @@ function App() {
               <StudentList />
             </>
           }
-        />     
-         <Route
+        />
+        <Route
           path="/user"
           element={
             <>

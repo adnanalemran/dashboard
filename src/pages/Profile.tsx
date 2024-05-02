@@ -6,10 +6,13 @@ import userSix from '../images/user/user-06.png';
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import useAxiosSecure from '../hooks/useAxiosPublic';
+import QrCode from './QrCode';
+
 const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
   const [dbuser, setDbuser] = useState(null);
   const axiosSecure = useAxiosSecure();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -48,6 +51,7 @@ const Profile = () => {
               />
             </div>
           </div>
+          <QrCode></QrCode>
           <div className="mt-4">
             <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
               {user?.displayName}
@@ -93,8 +97,7 @@ const Profile = () => {
                 number is {dbuser?.userData?.sscRegNo}, and I passed from{' '}
                 {dbuser?.userData?.SSCBoardName} board in{' '}
                 {dbuser?.userData?.passingYear}. I am currently enrolled in the{' '}
-                {dbuser?.course} course. 
-                .
+                {dbuser?.course} course. .
               </p>
             </div>
           </div>
