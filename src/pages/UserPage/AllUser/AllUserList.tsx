@@ -6,7 +6,6 @@ import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
 const AllUserList = () => {
-
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
   const { data: user = [], refetch } = useQuery({
@@ -91,25 +90,24 @@ const AllUserList = () => {
             }`}
             key={key}
           >
-            <Link  to={`/userInfo/${user?._id}`}>
-             <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="relative flex-shrink-0">
-                <img
-                  src={user?.photoURL}
-                  alt=""
-                  className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
-                />
-              </div>
+            <Link to={`/userInfo/${user?._id}`}>
+              <div className="flex items-center gap-3 p-2.5 xl:p-5">
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={user?.photoURL}
+                    alt=""
+                    className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
+                  />
+                </div>
 
-              <p className="hidden text-black dark:text-white sm:block">
-                {user.displayName}
-              </p>
-            </div>
+                <p className="hidden text-black dark:text-white sm:block">
+                  {user.displayName}
+                </p>
+              </div>
             </Link>
-           
 
             <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">{user.phoneNo}K</p>
+              <p className="text-black dark:text-white">{user.phoneNo}</p>
             </div>
 
             <div className="flex items-center justify-center p-2.5 xl:p-5">

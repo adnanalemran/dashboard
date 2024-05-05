@@ -19,7 +19,7 @@ const UserInfo = () => {
     },
   });
 
-  const qrCodeValue = `https://openit-edu.com/checking/$: {user?._id}`;
+  const qrCodeValue = `https://openit-edu.com/checking/${user?._id}`;
   return (
     <div>
       <DefaultLayout>

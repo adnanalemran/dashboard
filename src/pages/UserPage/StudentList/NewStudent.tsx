@@ -43,8 +43,17 @@ const NewStudent = () => {
         console.error(error);
       });
   };
+  if (loading === true) {
+    return (
+      <>
+        <DefaultLayout>
+          <Breadcrumb pageName="Appled Student list" />
+          Loading..{' '}
+        </DefaultLayout>{' '}
+      </>
+    );
+  }
 
- 
   return (
     <div>
       <DefaultLayout>
@@ -72,7 +81,7 @@ const NewStudent = () => {
             </div>
           </div>
 
-          {user.map((user, key) => (
+          {user?.map((user, key) => (
             <div
               className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
               key={key}
@@ -81,7 +90,7 @@ const NewStudent = () => {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                   <div className="h-12.5 w-15 rounded-md">
                     <img
-                      src={user.photoURL}
+                      src={user?.photoURL}
                       alt="Product"
                       className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
                     />
@@ -93,7 +102,7 @@ const NewStudent = () => {
               </div>
               <div className="col-span-2 hidden items-center sm:flex">
                 <p className="text-sm text-black dark:text-white">
-                  {user.course}
+                  {user?.course}
                 </p>
               </div>
 
@@ -118,14 +127,10 @@ const NewStudent = () => {
                     />
 
                     <button type="submit">
-                        <samp className='inline-flex items-center justify-center rounded-full bg-black py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10' >
-Accept
-                        </samp>
-                        
-                        
-                        </button>
-
-
+                      <samp className="inline-flex items-center justify-center rounded-full bg-black py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+                        Accept
+                      </samp>
+                    </button>
                   </div>
                 </form>
               </div>
