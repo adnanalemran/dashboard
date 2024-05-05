@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import useAxiosSecure from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosPublic';
 
 const WebNews = () => {
   const axiosSecure = useAxiosSecure();
@@ -80,11 +79,10 @@ const WebNews = () => {
   return (
     <div className="text-black">
       <div className="card  rounded-sm border border-stroke bg-white p-4 shadow-default dark:border-strokedark dark:bg-boxdark md:p-6 xl:p-9   ">
- 
         <div className=" mb-6   font-semibold text-black dark:text-white">
           <h4>Total Publish news : {notices?.length}</h4>
         </div>
-      
+
         <hr className="border-b-1 border-purple-400" />
         <form className="p-4" onSubmit={handleSubmit}>
           <div className="flex justify-between gap-4">
@@ -140,7 +138,7 @@ const WebNews = () => {
                   <h5 className="text-sm font-medium uppercase xsm:text-base">
                     Image
                   </h5>
-                </div> 
+                </div>
                 <div className="p-2.5 text-center xl:p-5">
                   <h5 className="text-sm font-medium uppercase xsm:text-base">
                     title
@@ -178,8 +176,8 @@ const WebNews = () => {
                     <p className="text-black dark:text-white">
                       {data.noticeTitle}
                     </p>
-                  </div>  
-                   <div className="flex items-center justify-center p-2.5 xl:p-5">
+                  </div>
+                  <div className="flex items-center justify-center p-2.5 xl:p-5">
                     <p className="text-black dark:text-white">
                       {data.noticeTitle}
                     </p>
@@ -197,12 +195,11 @@ const WebNews = () => {
 
                   <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                     <p className="text-meta-5">
-                      {' '}
                       <button
                         onClick={() => handleDeleteNoticce(data)}
                         className="btn btn-sm btn-error"
                       >
-                        <FaTrash />{' '}
+                        <FaTrash />
                       </button>
                     </p>
                   </div>

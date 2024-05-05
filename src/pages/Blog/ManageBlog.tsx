@@ -1,12 +1,10 @@
-import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
-import DefaultLayout from '../../layout/DefaultLayout';
-import WebNews from './WebNews';
-import { useState } from 'react';
-import useAxiosSecure from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
+import useAxiosSecure from '../../hooks/useAxiosPublic';
+import DefaultLayout from '../../layout/DefaultLayout';
 
 const ManageBlog = () => {
   const axiosSecure = useAxiosSecure();
@@ -205,7 +203,7 @@ const ManageBlog = () => {
                             onClick={() => handleDeleteNoticce(news)}
                             className="btn btn-sm btn-error"
                           >
-                            <FaTrash />{' '}
+                            <FaTrash />
                           </button>
                         </p>
                       </div>

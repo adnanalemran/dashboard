@@ -1,10 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosPublic';
-import { useQuery } from '@tanstack/react-query';
 
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const StudentExam = () => {
   const axiosSecure = useAxiosSecure();
@@ -100,11 +99,11 @@ const StudentExam = () => {
           </div>
 
           <input
-              type="url"
-              name="examLink"
-              className=" w-full mb-2 bg-slate-100 dark:bg-slate-800 dark:text-white p-2 rounded-md"
-              placeholder="Enter Exam Google form link "
-            />
+            type="url"
+            name="examLink"
+            className=" w-full mb-2 bg-slate-100 dark:bg-slate-800 dark:text-white p-2 rounded-md"
+            placeholder="Enter Exam Google form link "
+          />
 
           <br />
           <div className="flex justify-end gap-4">
@@ -112,7 +111,7 @@ const StudentExam = () => {
               type="submit"
               className="inline-flex items-center justify-center rounded-full bg-black py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
             >
-              Publish 
+              Publish
             </button>
           </div>
         </form>
@@ -186,12 +185,11 @@ const StudentExam = () => {
 
                   <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                     <p className="text-meta-5">
-                      {' '}
                       <button
                         onClick={() => handleDeleteNoticce(exam)}
                         className="btn btn-sm btn-error"
                       >
-                        <FaTrash />{' '}
+                        <FaTrash />
                       </button>
                     </p>
                   </div>

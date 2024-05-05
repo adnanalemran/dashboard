@@ -1,12 +1,11 @@
-import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
-import userThree from '../images/user/user-03.png';
-import DefaultLayout from '../layout/DefaultLayout';
-import { useContext, useEffect, useState } from 'react';
-import useAxiosSecure from '../hooks/useAxiosPublic';
-import { AuthContext } from '../providers/AuthProvider';
-import Swal from 'sweetalert2';
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
+import useAxiosSecure from '../hooks/useAxiosPublic';
+import DefaultLayout from '../layout/DefaultLayout';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Settings = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -191,7 +190,7 @@ const Settings = () => {
                   defaultValue={userData?.userData?.presentAddress}
                   className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
                 />
-              </div>{' '}
+              </div>
               <div className="space-y-1 text-sm">
                 <label className="block   ">permanentAddress</label>
                 <input

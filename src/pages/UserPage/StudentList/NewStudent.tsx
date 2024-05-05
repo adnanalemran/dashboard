@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import DefaultLayout from '../../../layout/DefaultLayout';
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 import Breadcrumb from '../../../components/Breadcrumbs/Breadcrumb';
 import useAxiosSecure from '../../../hooks/useAxiosPublic';
-import { useQuery } from '@tanstack/react-query';
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import DefaultLayout from '../../../layout/DefaultLayout';
 const NewStudent = () => {
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
@@ -48,8 +47,8 @@ const NewStudent = () => {
       <>
         <DefaultLayout>
           <Breadcrumb pageName="Appled Student list" />
-          Loading..{' '}
-        </DefaultLayout>{' '}
+          Loading..
+        </DefaultLayout>
       </>
     );
   }
