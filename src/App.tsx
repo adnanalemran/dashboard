@@ -22,6 +22,7 @@ import UserInfo from './pages/UserPage/UserInfo';
 import AdminEditProfile from './pages/UserPage/AllUser/AdminEditProfile';
 import ManageNotice from './pages/Notice/ManageNotice';
 import ManageBlog from './pages/Blog/ManageBlog';
+import MangeExam from './pages/Exam/MangeExam';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -185,22 +186,30 @@ function App() {
           }
         />
 
-
         <Route
           path="/notice"
           element={
             <>
               <PageTitle title="notice| Open IT is a leading BTEB training provider" />
-             <ManageNotice/>
+              <ManageNotice />
             </>
           }
-        />    
-            <Route
+        />
+        <Route
           path="/news"
           element={
             <>
               <PageTitle title="Blog| Open IT is a leading BTEB training provider" />
-             <ManageBlog/>
+              <ManageBlog />
+            </>
+          }
+        />   
+         <Route
+          path="/exam"
+          element={
+            <>
+              <PageTitle title="exam | Open IT is a leading BTEB training provider" />
+              <MangeExam />
             </>
           }
         />

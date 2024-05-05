@@ -188,21 +188,19 @@ const ManageBlog = () => {
                       </div>
 
                       <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-                      <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-                        <div className="relative flex-shrink-0">
-                          <img
-                            src={news?.imageUrl}
-                            alt=""
-                            className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
-                          />
+                        <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                          <div className="relative flex-shrink-0">
+                            <img
+                              src={news?.imageUrl}
+                              alt=""
+                              className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
+                            />
+                          </div>
                         </div>
                       </div>
-                      </div>
-                  
 
                       <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                         <p className="text-meta-5">
-                      
                           <button
                             onClick={() => handleDeleteNoticce(news)}
                             className="btn btn-sm btn-error"
